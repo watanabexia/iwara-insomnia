@@ -1,0 +1,166 @@
+_type: export
+__export_format: 4
+__export_date: 2023-03-17T06:30:16.260Z
+__export_source: insomnia.desktop.app:v2022.7.5
+resources:
+  - _id: req_2d320a3e45a04185bf9d941c7b560b05
+    parentId: wrk_cd94d1204d4a49b7bf28cf1dda5969d9
+    modified: 1679034542959
+    created: 1679009368970
+    url: "{{ _.baseurl }}/user/login"
+    name: Login
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"email":"email",
+        	"password":"password"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1679009368970
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_cd94d1204d4a49b7bf28cf1dda5969d9
+    parentId: null
+    modified: 1679009365216
+    created: 1679009365216
+    name: Iwara
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_cd439882e2a140f6a60e0dc478753cbd
+    parentId: wrk_cd94d1204d4a49b7bf28cf1dda5969d9
+    modified: 1679034468521
+    created: 1679013384307
+    url: "{{ _.baseurl }}/videos"
+    name: Get videos
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - id: pair_98bc9ce9d5a7410b94393d0ae8bbbcab
+        name: sort
+        value: date
+        description: date/trending/popularity/views/likes
+        disabled: false
+      - id: pair_6fe40c8682174a22bf384542775ac12c
+        name: rating
+        value: all
+        description: all/general/ecchi
+        disabled: false
+      - id: pair_4b9c7ab312eb4b0e8275a38fec1c8c0b
+        name: page
+        value: "0"
+        description: ""
+        disabled: false
+      - id: pair_e128693f88b840f791a91d382510bab5
+        name: limit
+        value: "32"
+        description: ""
+        disabled: false
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+      disabled: false
+    metaSortKey: -1679009368920
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_c17835013f3546f48e0801715321549b
+    parentId: wrk_cd94d1204d4a49b7bf28cf1dda5969d9
+    modified: 1679034554757
+    created: 1679024066103
+    url: "{{ _.baseurl }}/video/{{ video ID }}"
+    name: Get video
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - id: pair_e128693f88b840f791a91d382510bab5
+        name: ""
+        value: ""
+        description: ""
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+      disabled: false
+    metaSortKey: -1678772720307.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_9295b9e1431c48d2eeac43d979e67d6eb009e76b
+    parentId: wrk_cd94d1204d4a49b7bf28cf1dda5969d9
+    modified: 1679012345373
+    created: 1679009365218
+    name: Base Environment
+    data:
+      scheme: https
+      token: token
+      email: email
+      password: password
+    dataPropertyOrder:
+      "&":
+        - scheme
+        - token
+        - email
+        - password
+    color: null
+    isPrivate: false
+    metaSortKey: 1679009365218
+    _type: environment
+  - _id: jar_9295b9e1431c48d2eeac43d979e67d6eb009e76b
+    parentId: wrk_cd94d1204d4a49b7bf28cf1dda5969d9
+    modified: 1679012606257
+    created: 1679009365219
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_22601c619d3f4bcbbd3750c6c04e1a19
+    parentId: wrk_cd94d1204d4a49b7bf28cf1dda5969d9
+    modified: 1679009365217
+    created: 1679009365217
+    fileName: Iwara
+    contents: ""
+    contentType: yaml
+    _type: api_spec
+  - _id: env_c7623374e3e44df3b3614b4ece4868d4
+    parentId: env_9295b9e1431c48d2eeac43d979e67d6eb009e76b
+    modified: 1679034306020
+    created: 1679012353438
+    name: api.Iwara.tv
+    data:
+      baseurl: https://api.iwara.tv
+      token: "{% response 'body', 'req_2d320a3e45a04185bf9d941c7b560b05',
+        'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+    dataPropertyOrder:
+      "&":
+        - baseurl
+        - token
+    color: null
+    isPrivate: false
+    metaSortKey: 1679012353438
+    _type: environment
