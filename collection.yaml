@@ -1,11 +1,11 @@
 _type: export
 __export_format: 4
-__export_date: 2023-03-17T06:30:16.260Z
+__export_date: 2023-03-17T18:45:24.836Z
 __export_source: insomnia.desktop.app:v2022.7.5
 resources:
   - _id: req_2d320a3e45a04185bf9d941c7b560b05
     parentId: wrk_cd94d1204d4a49b7bf28cf1dda5969d9
-    modified: 1679034542959
+    modified: 1679078583986
     created: 1679009368970
     url: "{{ _.baseurl }}/user/login"
     name: Login
@@ -42,7 +42,7 @@ resources:
     _type: workspace
   - _id: req_cd439882e2a140f6a60e0dc478753cbd
     parentId: wrk_cd94d1204d4a49b7bf28cf1dda5969d9
-    modified: 1679034468521
+    modified: 1679078652067
     created: 1679013384307
     url: "{{ _.baseurl }}/videos"
     name: Get videos
@@ -69,7 +69,12 @@ resources:
         name: limit
         value: "32"
         description: ""
-        disabled: false
+        disabled: true
+      - id: pair_b7aa05ceadab4a708fd32dcb5d3f633c
+        name: subscribed
+        value: "false"
+        description: false/true
+        disabled: true
     headers: []
     authentication:
       type: bearer
@@ -86,10 +91,10 @@ resources:
     _type: request
   - _id: req_c17835013f3546f48e0801715321549b
     parentId: wrk_cd94d1204d4a49b7bf28cf1dda5969d9
-    modified: 1679034554757
+    modified: 1679034893418
     created: 1679024066103
     url: "{{ _.baseurl }}/video/{{ video ID }}"
-    name: Get video
+    name: Get video by ID
     description: ""
     method: GET
     body: {}
